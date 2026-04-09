@@ -51,7 +51,7 @@ def main():
     threading.Thread(target=run_health_server, daemon=True).start()
 
     # إنشاء التطبيق
-    if TOKEN == "ضـع_تـوكـن_بـوتـك_هـنـا":
+    if TOKEN == "@Sanad_Task_bot":
         return
 
     application = Application.builder().token(TOKEN).build()
