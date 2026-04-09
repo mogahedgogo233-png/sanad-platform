@@ -33,7 +33,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("👤 حسابي", callback_query_data='profile')],
         [InlineKeyboardButton("📢 قناة المنصة", url='https://t.me/your_channel')]
     ]
-    if user.id == ADMIN_ID:
+    if user.id == ADMIN_ID:7061847453
         keyboard.append([InlineKeyboardButton("⚙️ لوحة التحكم", callback_query_data='admin')])
     
     reply_markup = InlineKeyboardMarkup(keyboard)
