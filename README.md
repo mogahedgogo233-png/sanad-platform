@@ -6,7 +6,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 
 # --- الإعدادات (تأكد من وضع بياناتك) ---
-TOKEN = "8600729635:AAGzgw08pU__-s1Rwxiyi3hkdlY0Lzq-np4  " 
+TOKEN ="8600729635:AAGzgw08pU__-s1Rwxiyi3hkdlY0Lzq-np4  " 
 ADMIN_ID = @MogahidTarig # رقم الآيدي الخاص بك
 
 
@@ -56,7 +56,7 @@ def main():
 
     application = Application.builder().token(TOKEN).build()
     application.add_handler(CommandHandler("start", start))
-    application.add_handler(CallbackQueryHandler(button_handler))
+    application.add_handler(CallbackQueryHandlery(button_handler))
 
     print("البوت انطلق...")
     application.run_polling()
