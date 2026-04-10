@@ -54,7 +54,7 @@ def main():
     if TOKEN == "@Sanad_Task_bot":
         return
 
-    application = Application.builder().token(TOKEN).build()
+    application = application.builder().token(TOKEN).build()
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CallbackQueryHandlery(button_handler))
 
