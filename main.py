@@ -51,7 +51,7 @@ def main():
     threading.Thread(target=run_health_server, daemon=True).start()
 
     # إنشاء التطبيق
-    if TOKEN == "ضـع_تـوكـن_بـوتـك_هـنـا":
+    if TOKEN == " 8600729635:AAGzgw08pU__-s1Rwxiyi3hkdlY0Lzq-np4 ":
         return
 
     application = Application.builder().token(TOKEN).build()
