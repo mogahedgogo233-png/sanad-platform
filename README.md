@@ -6,7 +6,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 
 # --- الإعدادات (تأكد من وضع بياناتك) ---
-TOKEN ="8600729635:AAGzgw08pU__-s1Rwxiyi3hkdlY0Lzq-np4  " 
+TOKEN =" 8600729635:AAGzgw08pU__-s1Rwxiyi3hkdlY0Lzq-np4  " 
 ADMIN_ID = 7061847453 # رقم الآيدي الخاص بك
 
 
