@@ -1,19 +1,16 @@
+import os
 import asyncio
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-# --- ضع بياناتك هنا مباشرة ---
-BOT_TOKEN = "8600729635:AAGzgw08pU__-s1Rwxiyi3hkdlY0Lzq-np4" #
-ADMIN_ID = 7061847452 #
+# --- بياناتك ---
+BOT_TOKEN = "8600729635:AAGzgw08pU__-s1Rwxiyi3hkdlY0Lzq-np4" 
+ADMIN_ID = 7061847453 # ضع رقمك هنا
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    user_id = update.effective_user.id
-    if user_id == ADMIN_ID:
-        await update.message.reply_text("أهلاً بك يا مدير النظام (سند). تم التشغيل بنجاح!")
-    else:
-        await update.message.reply_text("مرحباً بك! البوت يعمل الآن.")
+    await update.message.reply_text(f"أهلاً بك! البوت يعمل بنجاح الآن.")
 
-async def main():
+def main():
     # بناء التطبيق
     application = ApplicationBuilder().token(BOT_TOKEN).build()
     
@@ -21,11 +18,11 @@ async def main():
     application.add_handler(CommandHandler("start", start))
     
     print("البوت بدأ العمل بنجاح...")
-    await application.run_polling()
+    
+    # هذه الطريقة هي الأفضل لمنع أخطاء الـ Event Loop في Render
+    application.run_polling(stop_signals=None)
 
 if __name__ == '__main__':
-    try:
-        asyncio.run(main())
-    except Exception as e:
-        print(f"Error: {e}")
+    main()
+
 
