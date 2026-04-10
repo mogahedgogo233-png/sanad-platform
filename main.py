@@ -39,7 +39,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.message.reply_text(f"مرحباً {user.first_name}! 🚀\nمنصة سند جاهزة للعمل.", reply_markup=reply_markup)
 
-async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def button_handler(update, context):
+    await update.callback_query.answer()
+
     query = update.callback_query
     await query.answer()
     if query.data == 'earn':
