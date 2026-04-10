@@ -1,25 +1,16 @@
+
 import os
-import threading
-import logging
-from http.server import BaseHTTPRequestHandler, HTTPServer
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
+from telegram import Update
+from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-# --- الإعدادات (تأكد من وضع بياناتك) ---
-TOKEN = " 8600729635:AAG8E4oF5dTbBrhKNPsfMDI-FmKWeYrht3E" 
-ADMIN_ID = int(os.getenv("ADMIN_ID7061847453 # رقم الآيدي الخاص بك
+# تأكد أن هذه السطور مكتوبة بدقة
+TOKEN = os.getenv("8600729635:AAGzgw08pU__-s1Rwxiyi3hkdlY0Lzq-np4")
+# تحويل رقم الآدمن إلى رقم صحيح (بدون علامات تنصيص)
+ADMIN_ID = int(os.getenv("7061847453", )) 
 
-
-# إعداد السجلات
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
-
-# --- سيرفر الـ Health Check لـ Render ---
-class HealthCheckHandler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.end_headers()
-        self.wfile.write(b"Bot is Running")
-
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # كود دالة البداية هنا
+    pass
 def run_health_server():
     port = int(os.environ.get("PORT", 8080))
     server = HTTPServer(('0.0.0.0', port), HealthCheckHandler)
